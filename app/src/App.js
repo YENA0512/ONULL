@@ -1,4 +1,5 @@
 import "./App.css";
+import styled from "styled-components";
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 const Header = ({ title }) => {
@@ -10,6 +11,26 @@ const Header = ({ title }) => {
     </header>
   );
 };
+const Navbar = styled.div`
+  display: flex;
+  margin: auto;
+  padding: 2rem;
+  background-color: lightgray;
+`;
+const Navul = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`;
+const Navli = styled.li`
+  display: inline;
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+  list-style: none;
+  text-align: center;
+  margin-right: 5rem;
+  padding: 0px;
+`;
 const Nav = () => {
   // const liTag = topics.map((t) => (
   //   <li>
@@ -17,19 +38,19 @@ const Nav = () => {
   //   </li>
   // ));
   return (
-    <nav>
-      <ul>
-        <li>
+    <Navbar>
+      <Navul>
+        <Navli>
           <Link to="/ona">오!나</Link>
-        </li>
-        <li>
+        </Navli>
+        <Navli>
           <Link to="/onu">오!너</Link>
-        </li>
-        <li>
+        </Navli>
+        <Navli>
           <Link to="/omap">오!맵</Link>
-        </li>
-      </ul>
-    </nav>
+        </Navli>
+      </Navul>
+    </Navbar>
   );
 };
 const Home = ({ title, body }) => {
